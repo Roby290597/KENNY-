@@ -1,0 +1,39 @@
+_wandb:
+    value:
+        cli_version: 0.30.0
+        e:
+            fx0u1e1n8qjos8q677thd3gkn84qs4yq:
+                codePath: c:\Users\brand\OneDrive\Desktop\AI_Selbststudium\ML_little\agents_examples\KENNY\LLM_sratch_Raschka\ch05_myversion.ipynb
+                codePathLocal: ch05_myversion.ipynb
+                email: hankbrandon631@gmail.com
+                executable: c:\Users\brand\anaconda3\envs\job_hf\python.exe
+                git:
+                    commit: 48ea4931f67d139f220e8cd2c08e44376257f7ae
+                    remote: https://github.com/Roby290597/agents_examples.git
+                host: Roby_Laptop9999
+                os: Windows-11-10.0.26200-SP0
+                program: c:\Users\brand\OneDrive\Desktop\AI_Selbststudium\ML_little\agents_examples\KENNY\LLM_sratch_Raschka\ch05_myversion.ipynb
+                python: CPython 3.13.11
+                root: c:\Users\brand\OneDrive\Desktop\AI_Selbststudium\ML_little\agents_examples\KENNY\LLM_sratch_Raschka
+                startedAt: "2026-10-15T15:42:05.365460Z"
+                writerId: fx0u1e1n8qjos8q677thd3gkn84qs4yq
+        m: []
+        python_version: 3.13.11
+        t:
+            "1":
+                - 95
+            "2":
+                - 95
+            "3":
+                - 2
+                - 13
+                - 16
+            "4": 3.13.11
+            "5": 0.30.0
+            "8":
+                - 1
+                - 3
+            "12": 0.30.0
+            "13": windows-amd64
+epochs:
+    value: 10
