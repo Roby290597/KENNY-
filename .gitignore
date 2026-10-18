@@ -2,6 +2,12 @@
 *.pth
 *.pdf
 *.png
+*.pyc
+*.syncstaate
+*.txt 
+*.log
+*.yaml
+*.json
 developement/
 wandb/
 __pycache__/ 

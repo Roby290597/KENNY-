@@ -1,9 +1,0 @@
-{"time":"2026-10-15T17:38:53.7870392+02:00","level":"INFO","msg":"wandb-core"}
-{"time":"2026-10-15T17:38:53.7896112+02:00","level":"INFO","msg":"stream: starting","core version":"0.30.0"}
-{"time":"2026-10-15T17:38:53.8091711+02:00","level":"INFO","msg":"stream: created new stream","id":"7p3ytjdt"}
-{"time":"2026-10-15T17:38:53.8091711+02:00","level":"INFO","msg":"handler: started"}
-{"time":"2026-10-15T17:38:53.8209137+02:00","level":"INFO","msg":"stream: started"}
-{"time":"2026-10-15T17:38:53.8246606+02:00","level":"INFO","msg":"writer: started","stream_id":"7p3ytjdt"}
-{"time":"2026-10-15T17:38:53.8246606+02:00","level":"INFO","msg":"sender: started"}
-{"time":"2026-10-15T17:38:54.4780908+02:00","level":"ERROR","msg":"api: HTTP error","status":404,"method":"POST","url":"https://api.wandb.ai/graphql"}
-{"time":"2026-10-15T17:38:54.4789547+02:00","level":"ERROR","msg":"runupserter: failed to init run","error":"returned error 404: {\"data\":{\"upsertBucket\":null},\"errors\":[{\"message\":\"entity hankbrandon631-private-projects-/KENNY not found during upsertBucket\",\"path\":[\"upsertBucket\"]}]}"}
