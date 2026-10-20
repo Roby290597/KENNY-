@@ -11,3 +11,4 @@
 developement/
 wandb/
 __pycache__/ 
+.env
