@@ -12,3 +12,7 @@ developement/
 wandb/
 __pycache__/ 
 .env
+loss_plots/
+model_states/
+model_and_optimizer_states/
+/tiny_stories_txt
