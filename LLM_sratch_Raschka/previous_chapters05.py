@@ -238,6 +238,9 @@ def generate_text_simple(model, idx, max_new_tokens, context_size):
     return idx
 
 
+
+
+
 if __name__ == "__main__":
 
     GPT_CONFIG_124M = {
