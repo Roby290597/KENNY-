@@ -1,7 +1,6 @@
 *.pt 
 *.pth
 *.pdf
-*.png
 *.pyc
 *.syncstaate
 *.txt 
@@ -17,5 +16,5 @@ model_states/
 model_and_optimizer_states/
 /tiny_stories_txt
 gpt2/
-
+loss_plots/
 
