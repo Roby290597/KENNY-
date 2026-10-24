@@ -20,5 +20,5 @@ To achieve this goal, I use the following source:
 
 
 
-!(KENNY.drawio.png)
+![Alt text](KENNY.jpg )
 
