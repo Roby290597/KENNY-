@@ -18,6 +18,7 @@ To achieve this goal, I use the following source:
 
 * Training auf die ersten 200_000 Geschichten   \& Validierung auf alle (Validierung) sGeschichten 
 
+![Alt text](KENNY.drawio.png )
 
 
 ![Alt text](KENNY.jpg )
