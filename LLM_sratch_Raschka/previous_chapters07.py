@@ -325,6 +325,57 @@ def train_model_simple(model, train_loader, val_loader, optimizer, device, num_e
 
     return train_losses, val_losses, track_tokens_seen
 
+from tqdm import tqdm
+import wandb
+
+def train_model_simple_wandb(model, train_loader, val_loader, optimizer, device, num_epochs,
+                       eval_freq, eval_iter, start_context, tokenizer):
+  with wandb.init(project='KENNY', name = "medium_tinystories_200_000all" ,config=GPT_CONFIG_124M) as run:
+      # wandb.init()
+
+      # Initialize lists to track losses and tokens seen
+      train_losses, val_losses, track_tokens_seen = [], [], []
+      tokens_seen, global_step = 0, -1
+
+      # Main training loop
+      for epoch in tqdm(range(num_epochs), desc="Training Progress", unit="epoch"):
+          start_time = time.time()
+          model.train()  # Set model to training mode
+
+          for input_batch, target_batch in train_loader:
+              optimizer.zero_grad() # Reset loss gradients from previous batch iteration
+              loss = calc_loss_batch(input_batch, target_batch, model, device)
+              loss.backward() # Calculate loss gradients
+              optimizer.step() # Update model weights using loss gradients
+              tokens_seen += input_batch.numel()
+              global_step += 1
+
+              # Optional evaluation step
+              if global_step % eval_freq == 0:
+                  train_loss, val_loss = evaluate_model(
+                      model, train_loader, val_loader, device, eval_iter)
+                  train_losses.append(train_loss)
+                  val_losses.append(val_loss)
+                  track_tokens_seen.append(tokens_seen)
+                  end_time = time.time()
+                  diff_time = end_time - start_time
+                  print(f"Ep {epoch+1} (Step {global_step:06d}): "
+                        f"Train loss {train_loss:.3f}, Val loss {val_loss:.3f}, Time {diff_time:.3f}")
+                  run.log({"train_loss": train_loss, "val_loss": val_loss, "tokens_seen": tokens_seen}, step=global_step)
+          end_time = time.time()
+          execution_time_minutes = (end_time - start_time) / 60
+          print(f"Epoch completed in {execution_time_minutes:.2f} minutes.")
+          # Print a sample text after each epoch
+          generate_and_print_sample(
+              model, tokenizer, device, start_context
+          )
+  run.finish()
+  return train_losses, val_losses, track_tokens_seen, global_step
+
+
+
+
+
 
 def evaluate_model(model, train_loader, val_loader, device, eval_iter):
     model.eval()
@@ -470,5 +521,5 @@ def plot_losses(epochs_seen, tokens_seen, train_losses, val_losses):
     ax2.set_xlabel("Tokens seen")
 
     fig.tight_layout()  # Adjust layout to make room
-    plt.savefig("loss-plot.pdf")
+    #plt.savefig("loss-plot.pdf")
     plt.show()
