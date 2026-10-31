@@ -19,4 +19,6 @@ gpt2/
 loss_plots/
 *.obj
 my_appartment/
+*.mtl 
+*.blend
 
